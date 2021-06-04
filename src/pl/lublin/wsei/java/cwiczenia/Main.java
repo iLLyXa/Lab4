@@ -10,9 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("gusInfoGraphic.fxml"));
+        FXMLLoader loader = new FXMLLoader((getClass().getResource("gusInfoGraphic.fxml")));
+        Parent root = loader.load();
+        Controller controller = loader.getController();
+
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 800, 700));
         primaryStage.show();
     }
 
